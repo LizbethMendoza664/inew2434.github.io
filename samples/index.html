@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Click Event in Anchor Tag</title>
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function warnUser()
+    {
+      return confirm("This link is only for people with Golden Retrievers!\n\nClick 'Cancel' if you do not love Golden Retrievers.\n\nClick 'OK' if you love them.");
+    }
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+  <p>
+  <a href="GoldenRetrievers.html" onclick="return warnUser();">Golden Retriever Club Home Page</a>
+  </p>
+  </div>
+</body>
+</html>
