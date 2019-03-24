@@ -1,1 +1,38 @@
-dddd
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Nested if Statements</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h3>This is a sample of an <i>if</i> statement.</h3>
+    <br />
+    <br />
+      <script type="text/javascript">
+      /* <![CDATA[ */
+        var numberStr = prompt("Please type in a number","");
+        var number = parseInt(numberStr);
+        
+        if (isNaN(number))
+        {
+          document.write("You put some garbage in there.");
+        }
+        else
+        {
+          if ((number > 0) && (number < 100))
+          {
+            document.write(number + " is between 0 and 100.");
+          }
+          else
+          {
+            document.write(number + " is NOT between 0 and 100.");
+          }
+        }
+      /* ]]> */
+      </script>
+  </div>
+</body>
+</html>
