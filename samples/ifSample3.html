@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Nested if Statement</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h3>This is a sample of a <i>nested if</i> statement.</h3>
+    <br />
+    <br />
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      var number = prompt("Please enter a number.","");
+      var numberRange;
+
+      if (number > 5)
+        if (number > 10)
+          numberRange = "The number is greater than 10.";
+      else
+        numberRange = "The number is less than 5.";
+
+      document.write(numberRange);
+      /* ]]> */
+      </script>
+</div>
+  </body>
+</html>
