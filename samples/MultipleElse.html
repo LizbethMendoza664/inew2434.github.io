@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>multiple if...else statements</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function displayGreeting()
+    {
+      var yourCountry = document.getElementById("CountryList").options[document.getElementById("CountryList").selectedIndex].value;
+      var msg = "";
+      
+      if (yourCountry == "United States")
+        msg = "Howdy!";
+      else if (yourCountry == "Germany")
+        msg = "Guten Tag!";
+      else if (yourCountry == "Spain")
+        msg = String.fromCharCode(161) + "Buenos D" + String.fromCharCode(237) + "as!";
+           /* UTF 161 is upside-down explanation point */
+           /* UTF 237 is i-acute */
+      else if (yourCountry == "Mexico")
+        msg = String.fromCharCode(161) + "Buenos D" + String.fromCharCode(237) + "as!";
+           /* UTF 161 is upside-down explanation point */
+           /* UTF 237 is i-acute */
+      else if (yourCountry == "Italy")
+        msg = "Buon Giorno!";
+      else if (yourCountry == "France")
+        msg = "Bonjour!";
+      else
+        msg = "We don't know where you live!";
+      
+      alert(msg);
+    }
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <form name="theForm" action="MultipleIfElse.html" method="post">
+      <select name="CountryList" id="CountryList">
+        <option value="">-- Select a Country --</option>
+        <option value="United States">United States</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="Italy">Italy</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Spain">Spain</option>
+      </select>
+      <br />
+      <br />
+      <input type="button" onclick="displayGreeting();" value="Display a Greeting..." />
+    </form>
+  </div>
+</body>
+</html>
