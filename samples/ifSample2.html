@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>if...else statement</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h3>This is a sample of an <i>if...else</i> statement.</h3>
+    <br />
+    <br />
+      <script type="text/javascript">
+        /* <![CDATA[ */
+        var today = new Date();
+        var dayOfWeek = today.getDay();
+        
+        if (dayOfWeek == 6)
+        {
+          document.write("Today is Saturday.");
+        }
+        else
+        {
+          document.write("Today is NOT Saturday.");
+        }
+        
+        document.write("<br /><br />This code is after the if statement.");
+        /* ]]> */
+      </script>
+  </div>
+</body>
+</html>
