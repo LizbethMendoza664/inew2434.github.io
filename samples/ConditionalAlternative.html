@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Conditional Alternative</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function reportClick(button)
+    {
+      var clickedButton;
+    
+      if (button.value == "First Button")
+      {
+        clickedButton = "First and Best";
+      }
+      else
+      {
+        clickedButton = "Second";
+      }
+    
+      alert("You clicked the " + clickedButton + " button.");
+    }
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <form name="theForm" action="" method="post">
+      <input type="button" value="First Button" onclick="reportClick(this);" />
+      <br /><br />
+      <input type="button" value="Second Button" onclick="reportClick(this);" />
+    </form>
+  </div>
+</body>
+</html>
