@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>switch statement</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function displayGreeting()
+    {
+      var yourCountry = document.getElementById("CountryList").options[document.getElementById("CountryList").selectedIndex].value;
+      var msg = "";
+      
+      switch (yourCountry)
+      {
+        
+        case "United States":
+          msg = "Howdy!";
+          break;
+          
+        case "Germany":
+          msg = "Guten Tag!";
+          break;
+          
+        case "Spain":
+        case "Mexico":
+          msg = String.fromCharCode(161) + "Buenos D" + String.fromCharCode(237) + "as!";  /* UTF 161 is upside-down explanation point */
+             /* UTF 237 is i-acute */
+          break;
+          
+        case "Italy":
+          msg = "Buon Giorno!";
+          break;
+          
+        case "France":
+          msg = "Bonjour!";
+          break;
+      
+        default:
+          msg = "We don't know where you live!";
+      }
+      
+      alert(msg);
+    }
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <form name="theForm" action="SwitchStatement.html" method="post">
+      <select name="CountryList" id="CountryList">
+        <option value="">-- Select a Country --</option>
+        <option value="United States">United States</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="Italy">Italy</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Spain">Spain</option>
+      </select>
+      <br />
+      <br />
+      <input type="button" onclick="displayGreeting();" value="Display a Greeting..." />
+    </form>
+  </div>
+</body>
+</html>
