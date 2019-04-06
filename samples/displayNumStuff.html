@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Do While Loop 2b</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var finalNum;
+      var displayNum = prompt("Enter a number", "");
+      if ((displayNum == "") || (displayNum == null))
+      {
+        finalNum = 0;
+      }
+      else
+      {
+        finalNum = displayNum;
+      }
+      
+      do
+      {
+        document.write("The number is " + finalNum + "<br/>");
+        finalNum--;
+        if (isNaN(finalNum))
+        {
+          document.write("Oops, it's NaN!");
+        }
+      }
+      while ( finalNum > 0);
+      /* ]]> */
+    </script>
+  </div>
+</body>
+</html>
