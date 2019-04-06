@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Interest Array with Formatting</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function formattedNumber(theNumber, lengthNeeded)
+    {
+      var numberStr = theNumber.toString();
+      
+      if (numberStr.length < lengthNeeded)
+      {
+        var numberZeroesNeeded = lengthNeeded - numberStr.length;
+        for (var j = 0; j < numberZeroesNeeded; j++)
+        {
+          numberStr += "0";
+        }
+      }
+      
+      return numberStr;
+    }
+    
+    var interestArray = new Array(7);
+    
+    interestArray[0] = .0725;
+    interestArray[1] = .0750;
+    interestArray[2] = .0775;
+    interestArray[3] = .0800;
+    interestArray[4] = .0825;
+    interestArray[5] = .0850;
+    interestArray[6] = .0875;
+    /* ]]> */
+  </script>
+</head>
+<body>
+  <div id="mainDiv">
+    <h3>The values in interestArray are:</h3>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      for (var i = 0; i < interestArray.length; i++)
+      {
+        document.write(formattedNumber(interestArray[i], 6) + "<br />");
+      }
+      /* ]]> */
+    </script>
+  </div>
+</body>
+</html>
