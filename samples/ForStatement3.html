@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>For...In Loop</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h3>The values of the properties in the window object are:</h3>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      for (stuff in window)
+      {
+        document.write("The value of " + stuff + " is " + window[stuff] + "<br/>");
+      }
+      /* ]]> */
+    </script>
+  </div>
+</body>
+</html>
