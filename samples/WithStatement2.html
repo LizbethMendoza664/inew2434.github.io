@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Nested With Statement</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      with (document)
+      {
+        with (window)
+        {
+          write("location is " + location + "<br/>");
+          write("screenTop is " + screenTop + "<br/>");
+          write("screenLeft is " + screenLeft + "<br/>");
+        }
+      }
+      /* ]]> */
+    </script>
+  </div>
+</body>
+</html>
