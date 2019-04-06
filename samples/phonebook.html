@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Book Demo</title>
+    <link rel="stylesheet" type="text/css" href="Samples.css">
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var phone_book = new Array();
+        phone_book["happy"] = "(203) 555-1111";
+        phone_book["sleepy"] = "(203) 555-2222";
+        phone_book["sneezy"] = "(203) 555-3333";
+        phone_book["sleezy"] = "(203) 555-4444";
+        phone_book["sneary"] = "(203) 555-5555";
+        phone_book["bleary"] = "(203) 555-6666";
+        phone_book["tweaked"] = "(203) 555-7777";
+        function displayNumber(the_phone_book, entry) {
+            var the_number = the_phone_book[entry];
+            document.getElementById("number_box").value = the_number;
+        }
+        /* ]]> */
+    </script>
+</head>
+<body>
+    <div id="mainDiv">
+        <h1>The Dwarves of Multimedia Gulch</h1>
+        <form name="the_form" action="" method="post">
+            <table border="0" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td valign="top"><b>Name:</b></td>
+                    <td valign="top">
+                        <select onchange="displayNumber(phone_book, this.options[this.selectedIndex].value);" size="7">
+        <option value="happy">Happy</option>
+        <option value="sleepy">Sleepy</option>
+        <option value="sneezy">Sneezy</option>
+        <option value="sleezy">Sleezy</option>
+        <option value="sneary">Sneary</option>
+        <option value="bleary">Bleary</option>
+        <option value="tweaked">Tweaked</option>
+        </select>
+                    </td>
+                    <td valign="top"><b>Number:</b></td>
+                    <td valign="top">
+                        <input type="text" name="number_box" id="number_box" value="" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
