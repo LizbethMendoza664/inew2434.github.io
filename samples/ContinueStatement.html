@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Break vs. Continue Statement</title>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h3>Results of <i>break</i>:</h3>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      for (var count = 1; count <= 5; count++)
+      {
+        if (count == 3)
+        {
+          break;
+        }
+        document.write(count + "<br/>");
+      }
+      /* ]]> */
+    </script>
+    <h3>Results of <i>continue</i>:</h3>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      for (var count = 1; count <= 5; count++)
+      {
+        if (count == 3)
+        {
+          continue;
+        }
+        document.write(count + "<br/>");
+      }
+      /* ]]> */
+    </script>
+  </div>
+</body>
+</html>
