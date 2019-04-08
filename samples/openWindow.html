@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Opening a Window</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var newWindow;
+    
+    function openWindow()
+    {
+      newWindow = window.open("http://www.nasa.gov");
+    }
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <a href="#" onclick="openWindow(); return false;">
+    Visit the NASA home page.
+    </a>
+  </div>
+</body>
+</html>
