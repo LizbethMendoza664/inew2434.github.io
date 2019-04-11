@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Saving Window Object Reference</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var newWindow = null;
+    
+    function openNewWindow()
+    {
+      if (newWindow == null)
+      {
+        newWindow = window.open("NewWindow3.html", "MyWindow", "width=700,height=200");
+      }
+      else
+      {
+        alert("The window is already open, silly!");
+      }
+    }
+    
+    function focusNewWindow()
+    {
+      if (newWindow != null)
+      {
+        newWindow.focus();
+      }
+      else
+      {
+        alert("There is no window to focus on!");
+      }
+    }
+    
+    function closeNewWindow()
+    {
+      if (newWindow != null)
+      {
+        newWindow.close();
+        newWindow = null;
+      }
+      else
+      {
+        alert("There is no window to close!");
+      }
+    }
+    
+    function setClosed()
+    {
+      if (newWindow != null)
+      {
+        // This is the variable in the second window:
+        newWindow.openerWindow = null;
+      }
+    }
+    /*  */
+  </script>
+</head>
+
+<body onunload="setClosed();">
+  <div id="mainDiv">
+    <a href="#" onclick="openNewWindow(); return false;">Open a Window</a>
+    <br/>
+    <br/>
+    <a href="#" onclick="focusNewWindow(); return false;">Focus on the New Window</a>
+    <br/>
+    <br/>
+    <a href="#" onclick="closeNewWindow(); return false;">Close the New Window</a>
+  </div>
+</body>
+</html>
