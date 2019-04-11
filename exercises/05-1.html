@@ -1,32 +1,195 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>HTML5 Template</title>
-  <link rel="stylesheet" href="myStyles.css">
-  <script>
-  
-  function showMessage() {
-    alert('This page has loaded!');
-  }
-  </script>
-<!--[if lt IE 9]>
-<script src="dist/html5shiv.js"></script>
-<![endif]-->
-</head>
 
-<body onload="showMessage();">
-<button>
-<input type="button"
-value="Click Me!"
-onclick="alert('You clicked the button!');">
-</button>
+<hr/>
 
 
-  <script>
-    /* <![CDATA[ */
-    // But JavaScript code can go wherever it needs to be, including in the body.
+         <a name="sec04"></a> 
+         <h3>
+            Timeouts
+         </h3>
+         <p>
+            You can tell JavaScript to run some code after a specified time
+            period has elapsed, with the <b>setTimeout( )</b> method. This
+            method is contained in the <b>window</b> object, but you can refer
+            to this method without explicitly referring to the window object.
+            The code that is run after the time period has elapsed is run only
+            <b>once</b>.
+         </p>
+         <p>
+            The syntax of <b>setTimeout( )</b> is:
+         </p>
+<pre>
+  setTimeout(&quot;code&quot;, milliseconds);
+</pre>
+         where 
+<pre>
+  &quot;code&quot;
+</pre>
+         is the JavaScript code that you want to run after the time period has
+         elapsed, and 
+<pre>
+  milliseconds
+</pre>
+         is the time period, in milliseconds. Five seconds, for instance, is
+         5000 milliseconds. <br>
+         <br>
+          
+         <p>
+            This method returns an <b>identifier</b> which can be used as the
+            argument to the <b>clearTimeout( )</b> method to cancel the timeout
+            before it runs its associated code. But if you are going to use
+            <b>clearTimeout( )</b>, you will need to <b>save</b> the identifier
+            in a variable when you call <b>setTimeout( )</b>.
+         </p>
+         <p>
+            Here is some code that shows how you can use setTimeout( ) and
+            clearTimeout( ).  This is page <b>SetTimeout.html</b>:
+         </p>
+<pre>
+&lt;!doctype html>
+&lt;html>
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;link rel="stylesheet" type="text/css" href="Samples.css">
+  &lt;title>setTimeout and clearTimeout&lt;/title>
+  &lt;script type="text/javascript">
+    /* &lt;![CDATA[ */
+    var buttonNotPressed = setTimeout("alert('You forgot to press the button!')", 3000);
+    
+    function buttonPressed()
+    {
+      clearTimeout(buttonNotPressed);
+      alert("You canceled the timeout code.");
+    }
     /* ]]> */
-  </script>
-</body>
-</html>
+  &lt;/script>
+&lt;/head>
+
+&lt;body>
+  &lt;div id="mainDiv">
+    &lt;form action="" method="post">
+      &lt;input type="button" value="Press to Cancel the Timeout"
+       onclick="buttonPressed();" />
+    &lt;/form>
+  &lt;/div>
+&lt;/body>
+&lt;/html>
+</pre>
+         You can see the above code running <a href="SetTimeout.html" target=
+         "_blank">here</a>. <br>
+         <br>
+          
+         <p>
+            Please <b>note</b> these points about the above code:
+         </p>
+         <ul>
+            <li>
+               The first line of JavaScript code runs when the page loads. It
+               sets the timeout to 3 seconds and saves the timeout identifier
+               in a <b>global</b> variable.
+            </li>
+            <li>
+               The code that will run after the 3 seconds has elapsed is an
+               <b>alert( )</b> statement.
+            </li>
+            <li>
+               If the user clicks the input button before the 3 seconds has
+               elapsed, the timeout is canceled. The argument to the
+               <b>clearTimeout( )</b> method is the global variable that
+               contains the timeout identifier.
+            </li>
+         </ul>
+         <br>
+         <br>
+          
+         <hr>
+         <a name="sec05"></a> 
+         <h3>
+            Intervals
+         </h3>
+         <p>
+            You can tell JavaScript to run some code <b>repeatedly</b> after a
+            specified time interval with the <b>setInterval( )</b> method. A
+            related method, which clears the interval and its code, is
+            <b>clearInterval( )</b>.
+         </p>
+         <p>
+            The syntax for <b>setInterval( )</b> is similar to the syntax for
+            setTimeout( ) and is shown below:
+         </p>
+<pre>
+  setInterval(&quot;code&quot;, milliseconds);
+</pre>
+         This method returns an <b>identifier</b> that can be saved in a
+         variable and then used as the argument to clearInterval( ). <br>
+         <br>
+          
+         <p>
+            Here is some code that shows how setInterval( ) and clearInterval() can be used.  This is page <b>SetInterval.html</b>:
+         </p>
+<pre>
+&lt;!doctype html>
+&lt;html>
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;link rel="stylesheet" type="text/css" href="Samples.css">
+  &lt;title>setInterval and clearInterval&lt;/title>
+  &lt;script type="text/javascript">
+    /* &lt;![CDATA[ */
+    var intervalID = setInterval("changeCounter();", 1000);
+    var counter = 0;
+    
+    function changeCounter()
+    {
+      counter++;
+      document.getElementById("counterDiv").innerHTML = counter;
+    }
+    
+    function buttonPressed()
+    {
+      clearInterval(intervalID);
+      document.getElementById("counterDiv").innerHTML = "";
+      alert("You canceled the counter update.");
+    }
+    /* ]]> */
+  &lt;/script>
+&lt;/head>
+
+&lt;body>
+  &lt;div id="mainDiv">
+    &lt;form action="" method="post">
+      &lt;input type="button" value="Press to Cancel the Counter Update"
+       onclick="buttonPressed();" />
+    &lt;/form>
+    &lt;div id="counterDiv">&lt;/div>
+  &lt;/div>
+&lt;/body>
+&lt;/html>
+</pre>
+         You can see the above code running <a href="SetInterval.html" target=
+         "_blank">here</a>. <br>
+         <br>
+          
+         <p>
+            Please <b>note</b> these points about the above code:
+         </p>
+         <ul>
+            <li>
+               The variables <b>intervalID</b> and <b>counter</b> are
+               <b>global</b> variables.
+            </li>
+            <li>
+               The interval is set at 1 second when the page loads.
+            </li>
+            <li>
+               Every 1 second, the status bar of the browser is updated with
+               the new value of the counter variable.
+            </li>
+            <li>
+               The <b>clearInterval( )</b> method has one argument, which is
+               the saved interval identifier.
+            </li>
+         </ul>
+         <br>
+         <br>
+          
+         <hr>
