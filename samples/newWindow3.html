@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>A New Window</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var openerWindow = null;  //Is initialized as the page loads
+    
+    function windowClose()
+    {
+      //setClosed();
+      self.close();
+    }
+
+    function setOpenerStatus()
+    {
+      if (openerWindow != null)
+      {
+        // This is the status bar in the first (original) window:
+        window.opener.status = "Hello there!";
+      }
+      else
+      {
+        alert("My opener went away!");
+      }
+    }
+
+    function setClosed()
+    {
+      if (openerWindow != null)
+      {
+        // This is the variable in the first (original) window:
+        window.opener.newWindow = null;
+      }
+      else
+      {
+        alert("My opener went away!");
+      }
+    }
+    
+    function setOpener()
+    {
+      // Replaces the null value when the page is fully loaded
+      openerWindow = window.opener;
+    }
+    /*  */
+  </script>
+</head>
+
+<body onload="setOpener();" onunload="setClosed();">
+<div id="mainDiv">
+  <h3>This is a new window!</h3>
+  <a href="#" onclick="windowClose(); return false;">Close</a>
+  <br/>
+  <br/>
+  <a href="#" onclick="setOpenerStatus(); return false;">Change the status of the opener</a>
+</div>
+</body>
+</html>
