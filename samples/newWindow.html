@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>A New Window</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function windowClose()
+    {
+      window.opener.newWindow = null;
+      self.close();
+    }
+    /*  */
+  </script>
+</head>
+
+<body>
+<div id="mainDiv">
+  <h3>This is a new window!</h3>
+  <a href="#" onclick="windowClose(); return false;">Close</a>
+</div>
+</body>
+</html>
