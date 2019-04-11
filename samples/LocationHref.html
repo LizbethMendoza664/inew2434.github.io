@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Changing the href Property</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function loadNewPage(newURL)
+    {
+      document.location.href = newURL;
+    }
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <a href="#" onclick="loadNewPage('http://www.blooberry.com'); return false;">
+    Blooberry
+    </a>
+    <br/>
+    <br/>
+    <a href="#" onclick="loadNewPage('http://www.wsabstract.com/jsref/index.shtml'); return false;">
+    JavaScript Kit
+    </a>
+  </div>
+</body>
+</html>
