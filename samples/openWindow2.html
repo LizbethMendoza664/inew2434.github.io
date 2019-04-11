@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Opening a Window</title>
+  <script type="text/javascript">
+  
+    /* <![CDATA[ */
+
+    var newWindow;
+    
+    function openWindow()
+    {
+      newWindow = window.open("directions.html",
+                              "directions",
+                              "height=300,width=700,left=50,top=50");
+    }
+    
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <a href="#" onclick="openWindow(); return false;">
+    View some directions to my place.
+    </a>
+  </div>
+</body>
+</html>
