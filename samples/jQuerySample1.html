@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>jQuery Sample 1</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    $(document).ready(function()
+    {
+      $("#buttonOneA").click(function(){
+    $("#firstP").hide();
+    });
+      $("#buttonOneB").click(function(){
+    $("#firstP").show();
+    });
+      $("#buttonTwoA").click(function(){
+    $("#secondP").hide();
+    });
+      $("#buttonTwoB").click(function(){
+    $("#secondP").show();
+    });
+    });
+    /* ]]> */
+  </script>
+  
+  <style type="text/css">
+    body { font-family: Arial,sans-serif; background-color: #ffd; }
+    #mainDiv { width: 800px; margin: 0 auto; position: relative; }
+    #firstP { background-color: #dff; width: 400px; position: absolute; left: 20px; top: 150px; padding: 1em; }
+    #secondP { background-color: #fdf; width: 400px; position: absolute; left: 500px; top: 150px; padding: 1em; }
+  </style>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h3>jQuery Sample 1</h3>
+    <div id="buttons">
+      <button id="buttonOneA">Hide Paragraph One</button>
+      <button id="buttonOneB">Show Paragraph One</button>
+      <button id="buttonTwoA">Hide Paragraph Two</button>
+      <button id="buttonTwoB">Show Paragraph Two</button>
+    </div>
+      <p id="firstP">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae ligula urna. Mauris fringilla 
+      felis eu leo gravida ullamcorper. Integer lacinia commodo accumsan. Ut velit mi, luctus condimentum 
+      tincidunt quis, suscipit non lectus. Nunc enim sapien, facilisis sed sodales dignissim, ullamcorper 
+      quis nisl. Suspendisse sit amet justo ut sapien pellentesque.
+      </p>
+      <p id="secondP">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae ligula urna. Mauris fringilla 
+      felis eu leo gravida ullamcorper. Integer lacinia commodo accumsan. Ut velit mi, luctus condimentum 
+      tincidunt quis, suscipit non lectus. Nunc enim sapien, facilisis sed sodales dignissim, ullamcorper 
+      quis nisl. Suspendisse sit amet justo ut sapien pellentesque.
+      </p>
+  </div>
+</body>
+</html>
