@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>jQuery Example 2</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    $(document).ready(function()
+    {
+      $("p").mouseover(function(){$(this).css({'font-size': '1.3em', 'color': 'red'});});
+      $("p").mouseout(reduceText);
+    });
+  
+    function reduceText()
+    {
+      var cssObj = {'font-size': '1em', 'color': 'black'};
+      $(this).css(cssObj);
+    }
+    /* ]]> */
+  </script>
+  
+  <style type="text/css">
+    body
+    {
+      font-family: Arial,sans-serif;
+      background-color: #ffaaaa;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h3>Second jQuery Example</h3>
+    <p id="firstP">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae ligula urna. Mauris fringilla felis eu leo gravida ullamcorper. Integer lacinia commodo accumsan. Ut velit mi, luctus condimentum tincidunt quis, suscipit non lectus. Nunc enim sapien, facilisis sed sodales dignissim, ullamcorper quis nisl. Suspendisse sit amet justo ut sapien pellentesque.
+    </p>
+    <p id="secondP">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae ligula urna. Mauris fringilla felis eu leo gravida ullamcorper. Integer lacinia commodo accumsan. Ut velit mi, luctus condimentum tincidunt quis, suscipit non lectus. Nunc enim sapien, facilisis sed sodales dignissim, ullamcorper quis nisl. Suspendisse sit amet justo ut sapien pellentesque.
+    </p>
+  </div>
+</body>
+</html>
