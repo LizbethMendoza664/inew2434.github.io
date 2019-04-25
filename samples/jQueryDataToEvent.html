@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Sending Data to an Event Handler</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      function greet( event )
+      {
+        alert( "Hello " + event.data.name + "!");
+      }
+      
+      $( "#button1" ).on( "click", { name: "Fred" }, greet );
+      
+      $( "#button2" ).on( "click", { name: "Addy" }, greet );
+    });
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h2>Button Events</h2>
+    <button id="button1">Click me!</button>
+    <br>
+    <button id="button2">No, click me!</button>
+  </div>
+</body>
+</html>
