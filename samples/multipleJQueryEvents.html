@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Sending Data to an Event Handler</title>
+  <style type="text/css">
+    #angryDiv, #cuteDiv
+    {
+      width: 500px;
+      height: 300px;
+      position: absolute;
+      left: 50%;
+      top: 200px;
+      margin-left: -250px;
+      display: none;
+    }
+    #captionDiv
+    {
+      width: 500px;
+      height: 40px;
+      position: absolute;
+      left: 50%;
+      top: 540px;
+      margin-left: -250px;
+      display: none;
+    }
+  </style>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      function announce( event )
+      {
+        $("#captionDiv").show();
+        var captionStr;
+        if (event.data.angryThing === true)
+        {
+          captionStr = event.data.name + " is angry!";
+        }
+        else
+        {
+          captionStr = event.data.name + " is happy.";
+        }
+        $("#captionDiv").html(captionStr);
+      }
+      
+      function showImage( event )
+      {
+        if (event.data.angryThing === true)
+        {
+          $("#angryDiv").fadeTo(400,1);
+        }
+        else
+        {
+          $("#cuteDiv").fadeTo(400,1);
+        }
+      }
+      
+      function hideImage( event )
+      {
+        $("#captionDiv").hide();
+        if (event.data.angryThing === true)
+        {
+          $("#angryDiv").fadeTo(400,0);
+        }
+        else
+        {
+          $("#cuteDiv").fadeTo(400,0);
+        }
+      }
+      
+      $( "#button1" ).on( "mouseover", { angryThing: true }, showImage );
+
+      $( "#button2" ).on( "mouseover", { angryThing: false }, showImage );
+      
+      $( "#button1" ).on( "mouseout", { angryThing: true }, hideImage );
+
+      $( "#button2" ).on( "mouseout", { angryThing: false }, hideImage );
+
+      $( "#button1" ).on( "click", { name: "George", angryThing: true }, announce );
+      
+      $( "#button2" ).on( "click", { name: "Addy", angryThing: false }, announce );
+    });
+  </script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <h2>Sending Data to an Event Handler</h2>
+    <button id="button1">Angry Stuff</button>
+            
+    <button id="button2">Cute Stuff</button>
+  </div>
+  <div id="angryDiv">
+    <img src="images/angryCatCrop.jpg" width="500" height="300" alt="Angry Cat" title="Angry Cat">
+  </div>
+  <div id="cuteDiv">
+    <img src="images/cuteCatCrop.jpg" width="500" height="300" alt="Cute Cat" title="Cute Cat">
+  </div>
+  <div id="captionDiv"></div>
+</body>
+</html>
