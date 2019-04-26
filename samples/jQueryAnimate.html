@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>jQuery Animation</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript"> 
+    /* <![CDATA[ */
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("div").animate({left:"100px",fontSize:"3em",height:"+=100",width:"+=420"},"slow",
+                         function(){$("#startDiv").css("background-color","red");});
+      });
+    });
+    /*  */
+  </script>
+  <style type="text/css">
+    #startDiv
+    {
+      background-color: #98bf21;
+      height: 100px;
+      width: 200px;
+      padding: 20px;
+      position: relative;
+    }
+    #mainDiv
+    {
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <button>Start Animation</button>
+    <br /><br />
+    <div id="startDiv">HELLO</div>
+  </div>
+</body>
+</html>
