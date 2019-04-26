@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Hide Door Three</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#doorThree").fadeTo("slow",0);
+      });
+    });
+  </script>
+  <style type="text/css">
+    #doorThree {background:#ADD;font-size:10em;width:300px;height:300px;position:absolute;
+                top:70px;z-index:2;text-align:center;}
+    #thePrize  {background:blue;color:white;width:300px;height:300px;position:absolute;
+                top:70px;z-index:1;text-align:center;}
+    p {margin-top: 30px;}
+    #mainDiv {height: 350px;}
+  </style>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <button>See What's Behind Door Number 3</button>
+    <div id="doorThree">
+     <p>3</p>
+    </div>
+    <div id="thePrize">
+      <h3>A Dream Vacation!</h3>
+    </div>
+  </div>
+</body>
+</html>
