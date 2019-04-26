@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>SlideToggle</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript"> 
+    $(document).ready(function(){
+    $(".flip").click(function(){
+        $(".panel").slideToggle("slow");
+      });
+    });
+  </script>
+ 
+<style type="text/css"> 
+div.panel
+{
+height: 400px;
+display:none;
+margin:0px;
+padding:15px;
+text-align:justify;
+background:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+p.flip
+{
+margin:0px;
+padding:5px;
+text-align:center;
+background:#e5eecc;
+border:solid 1px #c3c3c3;
+cursor: pointer;
+}
+</style>
+</head>
+ 
+<body>
+  <div id="mainDiv">
+    <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et metus sapien, 
+    nec consectetur massa. Pellentesque imperdiet mi sed magna ullamcorper sed viverra 
+    libero faucibus. Vivamus vel tellus eros. Vestibulum vulputate dictum erat vel 
+    vestibulum. Nunc at leo enim, non suscipit sapien. Fusce a gravida sem. Mauris 
+    mauris odio, pellentesque.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium nisi 
+    et diam pretium at fermentum sapien mollis. Sed ut dolor in felis fermentum ornare. 
+    Suspendisse venenatis, odio in vehicula venenatis, neque sem luctus neque, vitae 
+    interdum nunc mauris ut magna. Suspendisse ultrices ultricies pellentesque. Fusce 
+    sed massa augue. Quisque.</p>
+    </div>
+     
+    <p class="flip">Click to Slide the Panel</p>
+  </div> 
+</body>
+</html>
