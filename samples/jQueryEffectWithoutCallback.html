@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Callback UnDone</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("p").hide(1000);
+        alert("The paragraph is now hidden");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="mainDiv">
+    <button>Hide</button>
+    <p>This is a paragraph with little content.</p>
+  </div>
+</body>
+</html>
