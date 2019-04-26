@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Toggle</title>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+	  //$(".startHidden").hide();
+	  //$(".startShown").show();
+      $("button").click(function(){
+        $("p").toggle();
+      });
+    });
+  </script>
+  <style type="text/css">
+    #mainDiv { position: relative; height: 120px; }
+    .startHidden { display: none; position: absolute; left: 20px; top: 40px; }
+    .startShown { display: block; position: absolute; left: 20px; top: 80px; }
+  </style>
+</head>
+<body>
+  <div id="mainDiv">
+    <button>Toggle</button>
+    <p class="startHidden">This paragraph is hidden to start.</p>
+    <p class="startShown">This paragraph is displayed to start.</p>
+  </div>
+</body>
+</html>
