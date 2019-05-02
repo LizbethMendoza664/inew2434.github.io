@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="Samples.css">
+  <title>Conditional Expression</title>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    function checkTheNumber()
+    {
+      var yourNumber = document.getElementById("yourNumber").value;
+      var result;
+    
+      (yourNumber > 100) ? result = "greater than" : result = "less than or equal to";
+      document.getElementById("compareText").innerHTML = result;
+      document.getElementById("numberStuff").style.visibility = "visible";
+    }
+    /* ]]> */
+  </script>
+</head>
+
+<body>
+<div id="mainDiv">
+  <div id="numberStuff" style="visibility:hidden;">
+    Your number is <span id="compareText"></span> 100.
+  </div>
+  <br>
+  <form action="" method="post">
+    <input type="text" id="yourNumber" name="yourNumber">
+    <br>
+    <br>
+    <input type="button" value="Test the number" onclick="checkTheNumber()">
+  </form>
+</div>
+</body>
+</html>
